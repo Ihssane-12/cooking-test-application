@@ -1,0 +1,181 @@
+.recipe-card {
+  display: flex;
+  align-items: center;
+  background: white;
+  margin: 10px 20px;
+  padding: 10px;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+.recipe-card img {
+  width: 80px;
+  height: 80px;
+  border-radius: 15px;
+  object-fit: cover;
+}
+.recipe-card .info {
+  margin-left: 15px;
+  flex: 1;
+}
+.recipe-card .info h3 {
+  margin: 0;
+  font-size: 16px;
+}
+.recipe-card .info .meta {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  margin-top: 5px;
+}
+.recipe-card .info .meta i {
+  margin-right: 5px;
+}
+.recipe-card .fav-btn {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  cursor: pointer;
+}
+.recipe-card .fav-btn.active {
+  color: red;
+}
+.recipe-card .badge {
+  position: absolute;
+  bottom: 10px;
+  right: 15px;
+  font-size: 10px;
+  padding: 2px 8px;
+  border-radius: 10px;
+}
+
+.modal-content.full-screen {
+  background: #fff;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-y: auto;
+  z-index: 1000;
+}
+.modal-content.full-screen .recipe-hero {
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  padding: 20px;
+}
+.modal-content.full-screen .recipe-hero .recipe-title-overlay {
+  color: black;
+  font-family: "cursive";
+  background: rgba(255, 255, 255, 0.7);
+  padding: 5px 15px;
+  border-radius: 10px;
+}
+.modal-content.full-screen .tabs-container {
+  display: flex;
+  justify-content: space-around;
+  background: #E8F5E9;
+  margin: 20px;
+  border-radius: 30px;
+  padding: 5px;
+}
+.modal-content.full-screen .tabs-container .tab-btn {
+  border: none;
+  background: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  flex: 1;
+}
+.modal-content.full-screen .tabs-container .tab-btn.active {
+  background: #A8E6A1;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.modal-content.full-screen .tab-content-area {
+  padding: 0 30px;
+  text-align: center;
+}
+.modal-content.full-screen .tab-content-area .green-text {
+  color: #2D6A4F;
+  font-family: "cursive";
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+.modal-content.full-screen .tab-content-area .value {
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.modal-content.full-screen .tab-content-area .list-data {
+  text-align: left;
+  list-style: none;
+  padding: 0;
+  line-height: 1.8;
+}
+.modal-content.full-screen .close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 30px;
+  z-index: 10;
+  cursor: pointer;
+}
+
+body {
+  margin: 0;
+  font-family: "Arial", sans-serif;
+  background-color: #FFFFFF;
+}
+
+#app {
+  max-width: 400px;
+  margin: 0 auto;
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 80px;
+}
+
+.status-bar {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  font-weight: bold;
+}
+
+h2 {
+  font-family: "cursive";
+  padding: 20px;
+  font-size: 24px;
+}
+
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  width: 400px;
+  background: white;
+  display: flex;
+  justify-content: space-around;
+  padding: 15px 0;
+  border-top: 1px solid #eee;
+}
+.bottom-nav .nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #ccc;
+  cursor: pointer;
+}
+.bottom-nav .nav-item.active {
+  color: black;
+}
+.bottom-nav .nav-item span {
+  font-size: 10px;
+  margin-top: 5px;
+}
+
+/*# sourceMappingURL=main.css.map */
