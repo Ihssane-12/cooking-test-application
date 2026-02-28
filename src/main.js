@@ -39,3 +39,4 @@ document.querySelectorAll('.nav-item').forEach(item => {
         if(page === 'search') loadSearch();
     });
 });
+loadHome();
