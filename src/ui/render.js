@@ -5,3 +5,6 @@ const badge = getNutriBadge(recipe.caloriesPerServing);
 card.addEventListener('click', (e) => {
     if(!e.target.classList.contains('fav-btn')) showModal(recipe);
 });
+export const showModal = (recipe) => {
+    
+}
