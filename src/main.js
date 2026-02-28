@@ -3,16 +3,19 @@ import { renderRecipes } from './ui/render.js';
 import { saveFavorite, getFavorites } from './services/storageService.js';
 
 const mainContent = document.getElementById('main-content');
+
 const loadHome = async () => {
     mainContent.innerHTML = '<h2>History</h2><div id="recipe-list"></div>';
     const recipes = await getAllRecipes();
     renderRecipes(document.getElementById('recipe-list'), recipes);
 };
+
 const loadFavorites = () => {
     mainContent.innerHTML = '<h2>Favorite recipe</h2><div id="recipe-list"></div>';
     const favs = getFavorites();
     renderRecipes(document.getElementById('recipe-list'), favs, true);
 };
+
 const loadSearch = () => {
     mainContent.innerHTML = `
         <h2>Search recipe</h2>
@@ -21,14 +24,16 @@ const loadSearch = () => {
         </div>
         <div id="search-results"></div>
     `;
+    
+    document.getElementById('search-input').addEventListener('input', async (e) => {
+        const query = e.target.value;
+        if(query.length > 2) {
+            const results = await searchRecipes(query);
+            renderRecipes(document.getElementById('search-results'), results);
+        }
+    });
 };
-document.getElementById('search-input').addEventListener('input', async (e) => {
-    const query = e.target.value;
-    if(query.length > 2) {
-        const results = await searchRecipes(query);
-        renderRecipes(document.getElementById('search-results'), results);
-    }
-});
+
 document.querySelectorAll('.nav-item').forEach(item => {
     item.addEventListener('click', () => {
         document.querySelector('.nav-item.active').classList.remove('active');
@@ -39,7 +44,9 @@ document.querySelectorAll('.nav-item').forEach(item => {
         if(page === 'search') loadSearch();
     });
 });
+
 loadHome();
+
 document.addEventListener('click', async (e) => {
     if(e.target.classList.contains('fav-btn')) {
         const id = e.target.dataset.id;
