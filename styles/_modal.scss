@@ -32,3 +32,13 @@
     border-radius: 30px;
     padding: 5px;
 }
+.tab-btn {
+    border: none;
+    background: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    flex: 1;
+}
