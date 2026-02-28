@@ -9,40 +9,38 @@
 </head>
 <body>
     <div id="app">
-</div>
-<header>
-    <div class="status-bar">
-        <span>9:41</span>
-        <div class="icons">
-            <i class="fas fa-signal"></i>
-            <i class="fas fa-wifi"></i>
-            <i class="fas fa-battery-full"></i>
+        <header>
+            <div class="status-bar">
+                <span>9:41</span>
+                <div class="icons"><i class="fas fa-signal"></i> <i class="fas fa-wifi"></i> <i class="fas fa-battery-full"></i></div>
+            </div>
+        </header>
+
+        <main id="main-content">
+            </main>
+
+        <div id="loader" class="hidden">
+            <div class="spinner"></div>
         </div>
-    </div>
-</header>
-<main id="main-content">
-</main>
-<div id="loader" class="hidden">
-    <div class="spinner"></div>
-</div>
-<nav class="bottom-nav">
-    <div class="nav-item active" data-page="home">
-        <i class="fas fa-home"></i>
-        <span>Home</span>
+
+        <nav class="bottom-nav">
+            <div class="nav-item active" data-page="home">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </div>
+            <div class="nav-item" data-page="favorite">
+                <i class="fas fa-heart"></i>
+                <span>Favorite</span>
+            </div>
+            <div class="nav-item" data-page="search">
+                <i class="fas fa-search"></i>
+                <span>Search</span>
+            </div>
+        </nav>
     </div>
 
-    <div class="nav-item" data-page="favorite">
-        <i class="fas fa-heart"></i>
-        <span>Favorite</span>
-    </div>
+    <div id="recipe-modal" class="modal hidden"></div>
 
-    <div class="nav-item" data-page="search">
-        <i class="fas fa-search"></i>
-        <span>Search</span>
-    </div>
-</nav>
-<div id="recipe-modal" class="modal hidden"></div>
-<script type="module" src="src/main.js"></script>
-
+    <script type="module" src="src/main.js"></script>
 </body>
 </html>
