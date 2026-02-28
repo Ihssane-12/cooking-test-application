@@ -40,3 +40,12 @@ document.querySelectorAll('.nav-item').forEach(item => {
     });
 });
 loadHome();
+document.addEventListener('click', async (e) => {
+    if(e.target.classList.contains('fav-btn')) {
+        const id = e.target.dataset.id;
+        const recipes = await getAllRecipes();
+        const recipe = recipes.find(r => r.id == id);
+        saveFavorite(recipe);
+        e.target.classList.add('active');
+    }
+});
