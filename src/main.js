@@ -22,3 +22,10 @@ const loadSearch = () => {
         <div id="search-results"></div>
     `;
 };
+document.getElementById('search-input').addEventListener('input', async (e) => {
+    const query = e.target.value;
+    if(query.length > 2) {
+        const results = await searchRecipes(query);
+        renderRecipes(document.getElementById('search-results'), results);
+    }
+});
