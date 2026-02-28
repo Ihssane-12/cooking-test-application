@@ -42,3 +42,7 @@
     transition: 0.3s;
     flex: 1;
 }
+.tab-btn.active {
+    background: #A8E6A1;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
