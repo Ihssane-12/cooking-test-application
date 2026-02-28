@@ -6,5 +6,6 @@ export const saveFavorite = (recipe) => {
 }
 export const getFavorites = () => JSON.parse(localStorage.getItem('favs')) || [];
 export const removeFavorite = (id) => {
-    
+    favs = favs.filter(r => r.id !== id);
+
 }
