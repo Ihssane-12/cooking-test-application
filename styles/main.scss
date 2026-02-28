@@ -2,11 +2,13 @@
 @import 'cards';
 @import 'modal';
 @import 'responsive';
+
 body {
     margin: 0;
     font-family: $font-main;
     background-color: $bg-white;
 }
+
 #app {
     max-width: 400px;
     margin: 0 auto;
@@ -14,17 +16,20 @@ body {
     position: relative;
     padding-bottom: 80px;
 }
+
 .status-bar {
     display: flex;
     justify-content: space-between;
     padding: 10px 20px;
     font-weight: bold;
 }
+
 h2 {
-    font-family: 'cursive';
+    font-family: 'cursive'; // Pour matcher le style "Search recipe"
     padding: 20px;
     font-size: 24px;
 }
+
 .bottom-nav {
     position: fixed;
     bottom: 0;
@@ -34,14 +39,14 @@ h2 {
     justify-content: space-around;
     padding: 15px 0;
     border-top: 1px solid #eee;
-}
-.nav-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: #ccc;
-    cursor: pointer;
-}
-.nav-item.active {
-    color: black;
+    
+    .nav-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: #ccc;
+        cursor: pointer;
+        &.active { color: black; }
+        span { font-size: 10px; margin-top: 5px; }
+    }
 }
