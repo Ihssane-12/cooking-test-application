@@ -13,3 +13,12 @@ const loadFavorites = () => {
     const favs = getFavorites();
     renderRecipes(document.getElementById('recipe-list'), favs, true);
 };
+const loadSearch = () => {
+    mainContent.innerHTML = `
+        <h2>Search recipe</h2>
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Tap here to search...">
+        </div>
+        <div id="search-results"></div>
+    `;
+};
