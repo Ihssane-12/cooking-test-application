@@ -7,3 +7,10 @@ body {
     font-family: $font-main;
     background-color: $bg-white;
 }
+#app {
+    max-width: 400px;
+    margin: 0 auto;
+    min-height: 100vh;
+    position: relative;
+    padding-bottom: 80px;
+}
