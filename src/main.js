@@ -29,3 +29,13 @@ document.getElementById('search-input').addEventListener('input', async (e) => {
         renderRecipes(document.getElementById('search-results'), results);
     }
 });
+document.querySelectorAll('.nav-item').forEach(item => {
+    item.addEventListener('click', () => {
+        document.querySelector('.nav-item.active').classList.remove('active');
+        item.classList.add('active');
+        const page = item.dataset.page;
+        if(page === 'home') loadHome();
+        if(page === 'favorite') loadFavorites();
+        if(page === 'search') loadSearch();
+    });
+});
