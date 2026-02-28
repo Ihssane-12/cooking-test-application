@@ -2,3 +2,8 @@
 @import 'cards';
 @import 'modal';
 @import 'responsive';
+body {
+    margin: 0;
+    font-family: $font-main;
+    background-color: $bg-white;
+}
