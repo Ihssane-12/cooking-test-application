@@ -1,0 +1,42 @@
+@media (min-width: 992px) {
+
+
+.bottom-nav{
+
+position:fixed !important;
+display:flex !important; 
+
+top:0 !important;
+left:0 !important;
+
+transform:none !important;
+
+width:220px !important;
+height:100vh !important;
+
+flex-direction:column !important;
+justify-content:center !important;
+align-items:center !important;
+
+gap:60px !important;
+
+margin:0 !important;
+
+}
+
+
+#main-content{
+
+margin-left:220px !important;
+width:calc(100% - 220px) !important;
+
+}
+
+/* APP */
+
+#app{
+display:flex !important;
+padding-bottom:0 !important;
+}
+
+}

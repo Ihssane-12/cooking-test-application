@@ -1,16 +1,34 @@
 import { getAllRecipes, searchRecipes } from './api/recipeProvider.js';
 import { renderRecipes } from './ui/render.js';
 import { saveFavorite, getFavorites } from './services/storageService.js';
+import { toggleLoader } from './ui/loader.js';
 
 const mainContent = document.getElementById('main-content');
 
-const loadHome = async () => {
-    mainContent.innerHTML = '<h2>History</h2><div id="recipe-list"></div>';
-    const recipes = await getAllRecipes();
-    renderRecipes(document.getElementById('recipe-list'), recipes);
-};
 
-const loadFavorites = () => {
+
+// src/main.js
+
+const loadHome = async () => {
+    const mainContent = document.getElementById('main-content');
+    
+    mainContent.innerHTML = '<h2>History</h2><div id="recipe-list"></div>';
+    const container = document.getElementById('recipe-list');
+
+    toggleLoader(true, loadHome); 
+
+    try {
+        const data = await getAllRecipes(); 
+        
+        if (data && data.length > 0 && container) {
+            renderRecipes(container, data);
+            // Kan-7bso l-loader ghir ila l-data jat
+            toggleLoader(false); 
+        }
+    } catch (e) {
+        console.error("Connection Error:", e);
+    }
+};const loadFavorites = () => {
     mainContent.innerHTML = '<h2>Favorite recipe</h2><div id="recipe-list"></div>';
     const favs = getFavorites();
     renderRecipes(document.getElementById('recipe-list'), favs, true);
